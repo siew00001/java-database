@@ -45,7 +45,7 @@
                 <configuration>
                     <jdbc>
                         <driver>org.sqlite.JDBC</driver>
-                        <url>jdbc:sqlite:./src/main/resources/Einkaufsliste.db</url>
+                        <url>jdbc:sqlite:./src/Main/resources/Einkaufsliste.db</url>
                         <user></user>
                         <password></password>
                     </jdbc>
