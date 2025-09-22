@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.DBAccess;
+import Model.Product;
 import View.ListCLI;
 
 public class ListLogic {
@@ -10,13 +11,17 @@ public class ListLogic {
         int userChoice = cli.listMenu();
         switch (userChoice){
             case 1:
+                cli.printProducts(database.getAllProducts());
                 break;
             case 2:
+                database.addProductToDB(cli.createNewProduct());
                 break;
             case 3:
                 break;
-            default:
-                break;
+            case 0:
+                cli.closeApplication();
+                return;
         }
+        openList();
     }
 }
