@@ -17,6 +17,11 @@ public class ListLogic {
                 database.addProductToDB(cli.createNewProduct());
                 break;
             case 3:
+                int id = cli.removeProduct();
+                if(id == 0){
+                    break;
+                }
+                cli.resultOfRemove(database.removeProductFromDBByID(id));
                 break;
             case 0:
                 cli.closeApplication();

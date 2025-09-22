@@ -49,7 +49,7 @@ public class ListCLI {
         }catch (Exception e){
             System.out.println("Invalid input!");
             scanner = new Scanner(System.in);
-            return getFloat();1
+            return getFloat();
         }
     }
 
@@ -64,5 +64,17 @@ public class ListCLI {
         return new Product(name, price);
     }
 
+    public int removeProduct(){
+        System.out.println("Enter the id of the product you want to remove:");
+        System.out.println("Enter 0 to return.");
+        return getInt();
+    }
 
+    public void resultOfRemove(int result){
+        if(result == 0){
+            System.out.println("There is no element of this id!");
+        }else{
+            System.out.println("Product was removed!");
+        }
+    }
 }

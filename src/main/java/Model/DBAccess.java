@@ -11,7 +11,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
 
 import static com.example.jooq.codegen.tables.Products.*;
 
@@ -49,5 +48,9 @@ public class DBAccess {
 
     public void addProductToDB(Product product){
         context.insertInto(PRODUCTS).columns(PRODUCTS.NAME, PRODUCTS.PRICE).values(product.getName(), product.getPrice()).execute();
+    }
+
+    public int removeProductFromDBByID(int id){
+        return context.deleteFrom(PRODUCTS).where(PRODUCTS.ID.eq(id)).execute();
     }
 }
